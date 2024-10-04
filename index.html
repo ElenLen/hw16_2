@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/style/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <main class="main">
+    <h1>Форма регистрации пользователя</h1>
+    <form name="myForm" class="main__form">
+      <!-- Поле ввода имени: обязательное поле, должно содержать только буквы и пробелы. Длина имени должна быть от 2 до 20 символов. Должно иметь атрибуты placeholder и required-поле необходимым для заполнения. -->
+      <label for="name" class="form__label">Имя *:</label>
+      <span id="nameErr" class="error"></span>
+      <input type="text" id="name" name="namee" placeholder="Имя (2-20 символов: буквы, пробелы)" class="input-field"
+        minlength="2" maxlength="20" required />
+
+      <!-- Поле ввода электронной почты: обязательное поле, должно быть в формате email (содержать символ '@' и доменное имя). Должно иметь атрибуты placeholder и required-поле необходимым для заполнения. -->
+      <label for="email" class="form__label">E-mail *:</label>
+      <span id="emailErr" class="error"></span>
+      <input type="email" name="email" id="email" placeholder="mail@dom.com" class="input-field" required>
+
+      <!-- Поле ввода возраста: обязательное поле. Должно иметь атрибуты placeholder и required. -->
+      <label for="age" class="form__label">Возраст *:</label>
+      <span id="ageErr" class="error"></span>
+      <input type="number" name="age" id="age" class="input-field" placeholder="Возраст" minlength="1" maxlength="3"
+        required>
+
+      <!-- Поле выбора пола: представленное в виде radio buttons для выбора между мужчиной и женщиной -->
+      <div class="radio-block">
+        <input type="radio" name="gender" id="man" class="input-field" value="Муж." checked required>
+        <label for="man" class="form__label">Муж.</label>
+
+        <input type="radio" name="gender" id="woman" class="input-field" value="Жен." required>
+        <label for="woman" class="form__label">Жен.</label>
+      </div>
+
+      <!-- Поле выбора профессии: обязательное поле, представленное в виде выпадающего списка (select). Должно иметь атрибуты required и placeholder для выбора профессии. Варианты профессий: Врач, Программист, Учитель, Дизайнер, Инженер, Продавец, Другое. -->
+      <label for="ProfSelect" class="form__label">Профессия *:</label>
+      <select id="ProfSelect" name="ProfSelect" id="ProfSelect" placeholder="Профессии" required>
+        <option value="Врач">Врач</option>
+        <option value="Программист">Программист</option>
+        <option value="Учитель">Учитель</option>
+        <option value="Дизайнер">Дизайнер</option>
+        <option value="Инженер">Инженер</option>
+        <option value="Продавец">Продавец</option>
+        <option value="Другое">Другое</option>
+      </select>
+
+      <!-- Поле ввода пароля: обязательное поле, должно быть не менее 8 символов длиной и содержать как минимум одну заглавную букву, одну строчную букву и одну цифру. Должно иметь атрибуты placeholder, required, minlength и pattern. -->
+      <label for="pass" class="form__label">Введите пароль *:</label>
+      <span id="passErr" class="error"></span>
+      <input type="text" name="pass" class="input-field"
+        placeholder="8-20 симв., обязательно: заглавные, строчные буквы, цифры)" minlength="8" maxlength="20"
+        pattern="^[a-zA-Z0-9\d!@#$%^&*]{8,20}" required />
+
+      <!-- Поле checkbox, показывающее согласие пользователя с обработкой данных. Должно иметь атрибут required. -->
+      <div class="checkbox-block">
+        <input type="checkbox" name="consent" class="input-field" id="consent" placeholder="Согласие"
+          value="Да, согласен(а)" required>*
+        <label for="consent" class="form__label">Я согласен на обработку данных</label>
+        <span id="consErr" class="error"></span>
+      </div>
+      <!-- Кнопка отправки формы -->
+      <button type="submit" name="button" id="button" disabled="true"
+        style="background-color: whitesmoke; color: lightgray;">Отправить</button>
+    </form>
+  </main>
+  <script src="./assets/script/script.js"></script>
+</body>
+
+</html>
